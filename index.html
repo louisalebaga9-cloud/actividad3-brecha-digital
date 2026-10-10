@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desconectados: El Costo Oculto de la Brecha Digital</title>
     <style>
-        /* Paleta de colores de alto contraste validada */
         :root {
-            --primary-color: #003366; /* Azul oscuro */
-            --secondary-color: #0059b3; /* Azul medio */
-            --background-color: #f4f7f6; /* Gris muy claro */
-            --text-color: #1a1a1a; /* Negro suave */
-            --accent-color: #ff6600; /* Naranja Anáhuac para botones */
+            --primary-color: #003366; 
+            --secondary-color: #0059b3; 
+            --background-color: #f4f7f6; 
+            --text-color: #1a1a1a; 
+            --accent-color: #ff6600; 
         }
 
         body {
@@ -23,7 +22,6 @@
             line-height: 1.6;
         }
 
-        /* Encabezado con datos en la parte superior derecha */
         header {
             background-color: var(--primary-color);
             color: white;
@@ -54,7 +52,6 @@
             box-shadow: 0 8px 16px rgba(0,0,0,0.1);
         }
 
-        /* Estilo de los elementos interactivos */
         .interactive-section {
             margin-bottom: 20px;
             border: 1px solid #e0e0e0;
@@ -81,7 +78,6 @@
         .toggle-btn:hover { background-color: #f0f5fa; }
         .toggle-btn:focus { outline: 2px solid var(--accent-color); }
 
-        /* Contenido oculto y animaciones funcionales */
         .content-panel {
             max-height: 0;
             overflow: hidden;
@@ -91,7 +87,7 @@
         }
 
         .content-panel.active {
-            max-height: 800px; /* Altura suficiente para mostrar el contenido y las imágenes */
+            max-height: 1000px; 
             padding: 20px;
             border-top: 1px solid #e0e0e0;
         }
@@ -105,7 +101,6 @@
             gap: 15px;
         }
 
-        /* Imágenes e Iconos obligatorios */
         .optimized-img {
             max-width: 80%;
             height: auto;
@@ -113,7 +108,36 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
-        .transparent-icon { width: 70px; height: auto; }
+        /* Nuevos estilos para los íconos interactivos */
+        .transparent-icon { 
+            width: 70px; 
+            height: auto; 
+            cursor: pointer; /* Cambia el cursor a una mano */
+            transition: transform 0.2s;
+        }
+        
+        .transparent-icon:hover {
+            transform: scale(1.15); /* Efecto de crecimiento al pasar el mouse */
+        }
+
+        /* Estilo para la información secundaria oculta */
+        .hidden-extra-info {
+            display: none;
+            background-color: #e6f2ff;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid var(--accent-color);
+            font-size: 0.9em;
+            margin-top: 10px;
+            width: 80%;
+            text-align: left;
+            animation: fadeIn 0.4s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
         .references {
             margin-top: 50px;
@@ -126,70 +150,84 @@
 <body>
 
     <header>
-        <!-- Requisito: Nombre y Licenciatura arriba a la derecha -->
         <div class="header-credentials">
             Louis Alejandro Barragán García<br>
             Ingeniería en Tecnologías de la Información y Negocios Digitales
         </div>
-        <!-- Requisito: Título del tema -->
         <h1>Desconectados</h1>
         <div class="subtitle">El Costo Oculto de la Brecha Digital en la Sociedad Moderna</div>
     </header>
 
     <div class="container">
         <p style="text-align: center; color: var(--secondary-color); font-weight: bold; margin-bottom: 30px;">
-            Haz clic en cada sección para interactuar y descubrir la información.
+            Abre las secciones y haz clic en los íconos circulares para descubrir información secundaria.
         </p>
 
-        <!-- Elemento Interactivo 1: Datos Generales -->
+        <!-- Sección 1 -->
         <div class="interactive-section">
             <button class="toggle-btn">1. Datos Generales <span>➕</span></button>
             <div class="content-panel">
-                <p>La brecha digital se refiere a la desigualdad en el acceso, uso y apropiación de las Tecnologías de la Información y la Comunicación (TIC). Según datos de la CEPAL, aproximadamente un tercio de la población en América Latina y el Caribe aún carece de acceso a internet de calidad. Las zonas rurales y las comunidades de bajos ingresos son las más afectadas.</p>
+                <p>La brecha digital se refiere a la desigualdad en el acceso, uso y apropiación de las Tecnologías de la Información y la Comunicación (TIC). Según datos de la CEPAL, aproximadamente un tercio de la población en América Latina y el Caribe aún carece de acceso a internet de calidad.</p>
                 <div class="media-container">
                     <img src="pexels-ron-lach-10638070 (1).jpg" alt="Datos de conectividad" class="optimized-img">
-                    <img src="sin-wifi.png" alt="Icono sin wifi" class="transparent-icon">
+                    <p style="font-size: 0.85em; color: gray; margin-bottom: -5px;">👇 Haz clic en el ícono</p>
+                    <img src="sin-wifi.png" alt="Icono sin wifi" class="transparent-icon" onclick="toggleExtraInfo('extra1')">
+                    <div id="extra1" class="hidden-extra-info">
+                        <strong>Dato Extra:</strong> En las zonas rurales, la penetración de internet fijo a menudo no supera el 30%, creando zonas de exclusión digital absolutas.
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Elemento Interactivo 2: Consecuencias -->
+        <!-- Sección 2 -->
         <div class="interactive-section">
             <button class="toggle-btn">2. Consecuencias <span>➕</span></button>
             <div class="content-panel">
                 <p>La desconexión genera un efecto en cadena: los estudiantes no pueden acceder a educación en línea, los pacientes pierden la oportunidad de usar la telemedicina y los trabajadores quedan excluidos de plataformas de empleo remoto y comercio electrónico.</p>
                 <div class="media-container">
                     <img src="pexels-cottonbro-5999079 (1).jpg" alt="Consecuencias de la brecha" class="optimized-img">
-                    <img src="desconectar.png" alt="Icono desconectar" class="transparent-icon">
+                    <p style="font-size: 0.85em; color: gray; margin-bottom: -5px;">👇 Haz clic en el ícono</p>
+                    <img src="desconectar.png" alt="Icono desconectar" class="transparent-icon" onclick="toggleExtraInfo('extra2')">
+                    <div id="extra2" class="hidden-extra-info">
+                        <strong>Dato Extra:</strong> Durante los últimos años, la falta de conectividad dejó a millones de estudiantes sin posibilidad de tomar clases a distancia, afectando su desarrollo a largo plazo.
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Elemento Interactivo 3: Impacto Social -->
+        <!-- Sección 3 -->
         <div class="interactive-section">
             <button class="toggle-btn">3. Impacto Social <span>➕</span></button>
             <div class="content-panel">
-                <p>El impacto más grave es la perpetuación de la pobreza y la desigualdad económica. En la actualidad, el desarrollo de competencias digitales es un requisito para los empleos mejor remunerados. Al estar excluidos, los sectores vulnerables pierden competitividad.</p>
+                <p>El impacto más grave es la perpetuación de la pobreza y la desigualdad económica. Al estar excluidos del ecosistema digital, los sectores vulnerables pierden competitividad, ampliando la brecha económica entre quienes dominan la tecnología y quienes no.</p>
                 <div class="media-container">
                     <img src="pexels-ron-lach-9785024 (1).jpg" alt="Impacto social" class="optimized-img">
-                    <img src="conexion.png" alt="Icono conexión" class="transparent-icon">
+                    <p style="font-size: 0.85em; color: gray; margin-bottom: -5px;">👇 Haz clic en el ícono</p>
+                    <img src="conexion.png" alt="Icono conexión" class="transparent-icon" onclick="toggleExtraInfo('extra3')">
+                    <div id="extra3" class="hidden-extra-info">
+                        <strong>Dato Extra:</strong> La automatización del trabajo requiere habilidades digitales avanzadas que el 40% de la fuerza laboral actual en sectores marginados no posee.
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Elemento Interactivo 4: Soluciones -->
+        <!-- Sección 4 -->
         <div class="interactive-section">
             <button class="toggle-btn">4. Soluciones desde las Tecnologías <span>➕</span></button>
             <div class="content-panel">
                 <p>Como especialistas en TI, las soluciones incluyen: desarrollo de software optimizado para dispositivos de gama baja, implementación de infraestructura pública (redes comunitarias) y el fomento de startups con modelos de negocio inclusivos.</p>
                 <div class="media-container">
                     <img src="pexels-roman-odintsov-11025022 (1).jpg" alt="Soluciones tecnológicas" class="optimized-img">
-                    <img src="bombilla.png" alt="Icono bombilla" class="transparent-icon">
+                    <p style="font-size: 0.85em; color: gray; margin-bottom: -5px;">👇 Haz clic en el ícono</p>
+                    <img src="bombilla.png" alt="Icono bombilla" class="transparent-icon" onclick="toggleExtraInfo('extra4')">
+                    <div id="extra4" class="hidden-extra-info">
+                        <strong>Dato Extra:</strong> Las arquitecturas de software 'offline-first' permiten que las aplicaciones funcionen sin conexión y sincronicen datos automáticamente cuando detectan red.
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Elemento Interactivo 5: Llamado a la acción -->
+        <!-- Sección 5 -->
         <div class="interactive-section">
             <button class="toggle-btn" style="background-color: var(--secondary-color); color: white;">
                 5. Llamado a la Acción <span>🚀</span>
@@ -198,12 +236,15 @@
                 <p><strong>¡El código que escribimos tiene impacto social!</strong> Diseñemos tecnología pensando en la accesibilidad universal. Asegúrate de que tus plataformas sean inclusivas y no asumas que todos los usuarios tienen internet de alta velocidad.</p>
                 <div class="media-container">
                     <img src="pexels-kampus-8188729 (1).jpg" alt="Llamado a la acción" class="optimized-img">
-                    <img src="realidad-virtual.png" alt="Icono realidad virtual" class="transparent-icon">
+                    <p style="font-size: 0.85em; color: gray; margin-bottom: -5px;">👇 Haz clic en el ícono</p>
+                    <img src="realidad-virtual.png" alt="Icono realidad virtual" class="transparent-icon" onclick="toggleExtraInfo('extra5')">
+                    <div id="extra5" class="hidden-extra-info">
+                        <strong>Dato Extra:</strong> Iniciativas como el "Zero Rating" permiten que aplicaciones educativas funcionen en celulares sin consumir datos móviles del usuario. ¡Ese es el futuro del desarrollo web!
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Requisito: Referencias formato APA 7 -->
         <div class="references">
             <h3>Referencias</h3>
             <p>Comisión Económica para América Latina y el Caribe (CEPAL). (2022). <em>Estado de la banda ancha en América Latina y el Caribe</em>. Naciones Unidas. https://www.cepal.org</p>
@@ -213,9 +254,8 @@
     </div>
 
     <script>
-        // Lógica de interactividad y animaciones fluidas
+        // Lógica de acordeón
         const botones = document.querySelectorAll('.toggle-btn');
-
         botones.forEach(boton => {
             boton.addEventListener('click', function() {
                 const panel = this.nextElementSibling;
@@ -229,12 +269,21 @@
                     document.querySelectorAll('.toggle-btn span').forEach(s => {
                         if(s.textContent !== '🚀') s.textContent = '➕';
                     });
-                    
                     panel.classList.add('active');
                     icono.textContent = (icono.textContent === '🚀') ? '🚀' : '➖';
                 }
             });
         });
+
+        // Lógica para mostrar información al hacer clic en los íconos
+        function toggleExtraInfo(id) {
+            const extraInfoDiv = document.getElementById(id);
+            if (extraInfoDiv.style.display === "block") {
+                extraInfoDiv.style.display = "none";
+            } else {
+                extraInfoDiv.style.display = "block";
+            }
+        }
     </script>
 </body>
 </html>
