@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desconectados: El Costo Oculto de la Brecha Digital</title>
+    <style>
+        /* Paleta de colores de alto contraste validada */
+        :root {
+            --primary-color: #003366; /* Azul oscuro */
+            --secondary-color: #0059b3; /* Azul medio */
+            --background-color: #f4f7f6; /* Gris muy claro */
+            --text-color: #1a1a1a; /* Negro suave */
+            --accent-color: #ff6600; /* Naranja Anáhuac para botones */
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Encabezado con datos en la parte superior derecha */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-credentials {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            text-align: right;
+            font-size: 0.9em;
+            font-weight: 600;
+            color: #e6e6e6;
+        }
+
+        h1 { margin: 0; font-size: 2.5em; }
+        .subtitle { font-size: 1.2em; font-weight: 300; margin-top: 10px; }
+
+        .container {
+            max-width: 900px;
+            margin: -20px auto 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        /* Estilo de los elementos interactivos */
+        .interactive-section {
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .toggle-btn {
+            width: 100%;
+            background-color: white;
+            color: var(--primary-color);
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 15px 20px;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        .toggle-btn:hover { background-color: #f0f5fa; }
+        .toggle-btn:focus { outline: 2px solid var(--accent-color); }
+
+        /* Contenido oculto y animaciones funcionales */
+        .content-panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease;
+            background-color: #fafafa;
+            padding: 0 20px;
+        }
+
+        .content-panel.active {
+            max-height: 800px; /* Altura suficiente para mostrar el contenido y las imágenes */
+            padding: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .media-container {
+            text-align: center;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Imágenes e Iconos obligatorios */
+        .optimized-img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .transparent-icon { width: 70px; height: auto; }
+
+        .references {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid var(--primary-color);
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <!-- Requisito: Nombre y Licenciatura arriba a la derecha -->
+        <div class="header-credentials">
+            Louis Alejandro Barragán García<br>
+            Ingeniería en Tecnologías de la Información y Negocios Digitales
+        </div>
+        <!-- Requisito: Título del tema -->
+        <h1>Desconectados</h1>
+        <div class="subtitle">El Costo Oculto de la Brecha Digital en la Sociedad Moderna</div>
+    </header>
+
+    <div class="container">
+        <p style="text-align: center; color: var(--secondary-color); font-weight: bold; margin-bottom: 30px;">
+            Haz clic en cada sección para interactuar y descubrir la información.
+        </p>
+
+        <!-- Elemento Interactivo 1: Datos Generales -->
+        <div class="interactive-section">
+            <button class="toggle-btn">1. Datos Generales <span>➕</span></button>
+            <div class="content-panel">
+                <p>La brecha digital se refiere a la desigualdad en el acceso, uso y apropiación de las Tecnologías de la Información y la Comunicación (TIC). Según datos de la CEPAL, aproximadamente un tercio de la población en América Latina y el Caribe aún carece de acceso a internet de calidad. Las zonas rurales y las comunidades de bajos ingresos son las más afectadas.</p>
+                <div class="media-container">
+                    <img src="pexels-ron-lach-10638070 (1).jpg" alt="Datos de conectividad" class="optimized-img">
+                    <img src="sin-wifi.png" alt="Icono sin wifi" class="transparent-icon">
+                </div>
+            </div>
+        </div>
+
+        <!-- Elemento Interactivo 2: Consecuencias -->
+        <div class="interactive-section">
+            <button class="toggle-btn">2. Consecuencias <span>➕</span></button>
+            <div class="content-panel">
+                <p>La desconexión genera un efecto en cadena: los estudiantes no pueden acceder a educación en línea, los pacientes pierden la oportunidad de usar la telemedicina y los trabajadores quedan excluidos de plataformas de empleo remoto y comercio electrónico.</p>
+                <div class="media-container">
+                    <img src="pexels-cottonbro-5999079 (1).jpg" alt="Consecuencias de la brecha" class="optimized-img">
+                    <img src="desconectar.png" alt="Icono desconectar" class="transparent-icon">
+                </div>
+            </div>
+        </div>
+
+        <!-- Elemento Interactivo 3: Impacto Social -->
+        <div class="interactive-section">
+            <button class="toggle-btn">3. Impacto Social <span>➕</span></button>
+            <div class="content-panel">
+                <p>El impacto más grave es la perpetuación de la pobreza y la desigualdad económica. En la actualidad, el desarrollo de competencias digitales es un requisito para los empleos mejor remunerados. Al estar excluidos, los sectores vulnerables pierden competitividad.</p>
+                <div class="media-container">
+                    <img src="pexels-ron-lach-9785024 (1).jpg" alt="Impacto social" class="optimized-img">
+                    <img src="conexion.png" alt="Icono conexión" class="transparent-icon">
+                </div>
+            </div>
+        </div>
+
+        <!-- Elemento Interactivo 4: Soluciones -->
+        <div class="interactive-section">
+            <button class="toggle-btn">4. Soluciones desde las Tecnologías <span>➕</span></button>
+            <div class="content-panel">
+                <p>Como especialistas en TI, las soluciones incluyen: desarrollo de software optimizado para dispositivos de gama baja, implementación de infraestructura pública (redes comunitarias) y el fomento de startups con modelos de negocio inclusivos.</p>
+                <div class="media-container">
+                    <img src="pexels-roman-odintsov-11025022 (1).jpg" alt="Soluciones tecnológicas" class="optimized-img">
+                    <img src="bombilla.png" alt="Icono bombilla" class="transparent-icon">
+                </div>
+            </div>
+        </div>
+
+        <!-- Elemento Interactivo 5: Llamado a la acción -->
+        <div class="interactive-section">
+            <button class="toggle-btn" style="background-color: var(--secondary-color); color: white;">
+                5. Llamado a la Acción <span>🚀</span>
+            </button>
+            <div class="content-panel">
+                <p><strong>¡El código que escribimos tiene impacto social!</strong> Diseñemos tecnología pensando en la accesibilidad universal. Asegúrate de que tus plataformas sean inclusivas y no asumas que todos los usuarios tienen internet de alta velocidad.</p>
+                <div class="media-container">
+                    <img src="pexels-kampus-8188729 (1).jpg" alt="Llamado a la acción" class="optimized-img">
+                    <img src="realidad-virtual.png" alt="Icono realidad virtual" class="transparent-icon">
+                </div>
+            </div>
+        </div>
+
+        <!-- Requisito: Referencias formato APA 7 -->
+        <div class="references">
+            <h3>Referencias</h3>
+            <p>Comisión Económica para América Latina y el Caribe (CEPAL). (2022). <em>Estado de la banda ancha en América Latina y el Caribe</em>. Naciones Unidas. https://www.cepal.org</p>
+            <p>Grupo Banco Mundial. (2021). <em>Informe sobre el desarrollo mundial 2021: Datos para una vida mejor</em>. Banco Mundial. https://www.bancomundial.org</p>
+            <p>Unión Internacional de Telecomunicaciones (UIT). (2023). <em>Medir el desarrollo digital: El hecho y las cifras</em>. UIT. https://www.itu.int</p>
+        </div>
+    </div>
+
+    <script>
+        // Lógica de interactividad y animaciones fluidas
+        const botones = document.querySelectorAll('.toggle-btn');
+
+        botones.forEach(boton => {
+            boton.addEventListener('click', function() {
+                const panel = this.nextElementSibling;
+                const icono = this.querySelector('span');
+
+                if (panel.classList.contains('active')) {
+                    panel.classList.remove('active');
+                    icono.textContent = (icono.textContent === '🚀') ? '🚀' : '➕';
+                } else {
+                    document.querySelectorAll('.content-panel').forEach(p => p.classList.remove('active'));
+                    document.querySelectorAll('.toggle-btn span').forEach(s => {
+                        if(s.textContent !== '🚀') s.textContent = '➕';
+                    });
+                    
+                    panel.classList.add('active');
+                    icono.textContent = (icono.textContent === '🚀') ? '🚀' : '➖';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
